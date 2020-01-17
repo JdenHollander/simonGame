@@ -1,13 +1,31 @@
-//alert("working");
+var isConnected = MBirdSdk.isConnected();
+        
+    function Init(){
+		 if (isConnected) {
+			 alert("there is a MBird connection");
+			 setVolume(5);
+		 }else{
+			 alert("no mBirdSdk connected");
+}}
+		 
+ function SetVolume(value){
+				 MBirdSdk.Core.UpdateVolume(value).then(function(result){
+					 Console("Volume set to "+ value);	
+				 );
+}}					 
+			
+
 var buttonColors = ["red", "blue", "green", "yellow"];
 var gamePattern = [];
 var userClickedPattern = [];
 var level = 0;
 //You'll need a way to keep track of whether if the game has started or not, so you only call nextSequence() on the first keypress.
 var started = false;
+		
 
 //Use jQuery to detect when a keyboard key has been pressed, when that happens for the first time, call nextSequence().
-$(document).keypress(function() {
+$(document).ontouchstart(function(){
+//$(document).keypress(function() {
   if (!started) {
     //The h1 title starts out saying "Press A Key to Start", when the game has started, change this to say "Level 0".
     $("#level-title").text("Level " + level);
@@ -89,3 +107,5 @@ function startOver(){
   gamePattern = [];
   started = false;
 }
+
+	
