@@ -1,12 +1,15 @@
-var isConnected = MBirdSdk.isConnected();
-        
-    function Init(){
-		 if (isConnected) {
-			 alert("there is a MBird connection");
-			 setVolume(5);
-		 }else{
-			 alert("no mBirdSdk connected");
-}}
+//alert("working");
+var isConnected = MBirdSdk.isConnected()
+window.onload = Init;
+
+function Init(){
+if (isConnected) {
+	alert("working, use a mouse and keyboard to play the game"); 
+	setVolume(5);
+} else {
+	alert("MBird JS SDK could not be initialized");
+}
+}      
 		 
  function SetVolume(value){
 				 MBirdSdk.Core.UpdateVolume(value).then(function(result){
