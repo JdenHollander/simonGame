@@ -1,22 +1,12 @@
 //alert("working");
 var isConnected = MBirdSdk.isConnected()
-window.onload = Init;
 
-function Init(){
 if (isConnected) {
 	alert("working, use a mouse and keyboard to play the game"); 
-	setVolume(5);
 } else {
 	alert("MBird JS SDK could not be initialized");
 }
-}      
-		 
- function SetVolume(value){
-				 MBirdSdk.Core.UpdateVolume(value).then(function(result){
-					 Console("Volume set to "+ value);	
-				 );
-}}					 
-			
+
 
 var buttonColors = ["red", "blue", "green", "yellow"];
 var gamePattern = [];
