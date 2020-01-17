@@ -1,3 +1,4 @@
+/*
 //alert("working");
 var isConnected = MBirdSdk.isConnected()
 
@@ -7,7 +8,7 @@ if (isConnected) {
 	alert("MBird JS SDK could not be initialized");
 }
 
-
+*/
 var buttonColors = ["red", "blue", "green", "yellow"];
 var gamePattern = [];
 var userClickedPattern = [];
